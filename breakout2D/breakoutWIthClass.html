@@ -57,7 +57,7 @@
                         this.bricks[c][r].y = brickY;
                         this.ctx.beginPath();
                         this.ctx.rect(brickX, brickY, this.brickWidth, this.brickHeight);
-                        this.ctx.fillStyle = "#0095DD";
+                        this.ctx.fillStyle = "purple";
                         this.ctx.fill();
                         this.ctx.closePath();
                       }
@@ -91,7 +91,7 @@
                 drawBall(){
                     this.ctx.beginPath();
                     this.ctx.arc(this.x, this.y, this.ballRadius, 0, Math.PI*2);
-                    this.ctx.fillStyle = "#0095DD";
+                    this.ctx.fillStyle = "orange";
                     this.ctx.fill();
                     this.ctx.closePath();
                 }
@@ -130,7 +130,6 @@
                     this.x += this.dx ;
                     this.y += this.dy ;
                 }
-
                 //ตรวจสอบการชนระหว่างกำแพงกำลูกบอล และเพิ่มคะแนนเมื่อกำแพงถูกทำลาย
                 collisionDetection() {
                   for (var c = 0; c < this.game.brickColumnCount; c++) {
@@ -159,7 +158,6 @@
                   this.x = x;
                   this.y = y;
                   this.status = status;
-
                 }
             }
             //Class ไม้ตี
@@ -176,7 +174,6 @@
                   this.score = 0;
                   this.lives = 3;
                   this.velocity = 20; //move speed
-
                 }
                 //วาดไม้ตี
                 drawPaddle() {
@@ -219,8 +216,6 @@
                     document.addEventListener("keydown", this.checkInput , false);
                     document.addEventListener("keyup", this.checkInput, false);
                 }
-                
-                
                 // ขยับไม้ตีตามการกดลูกศร ซ้าย-ขวา
                 checkInput(e){
                   if (e.key == "ArrowRight") { 
@@ -231,8 +226,7 @@
                     game.paddle.moveLeft();
                     }
                 }
-            }
-            
+            }   
             var game = new Main(); //ประกาศ object เพื่อเตรียมเล่นเกม
             function Run(){ //สร้างฟังก์ชั่นเพื่อให้เรียกใช้ตัวเกมผ่านฟังก์ชั่นนี้ห
                 game.draw();
